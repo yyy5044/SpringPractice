@@ -1,0 +1,13 @@
+# 빌드 결과물
+target/
+
+# IDE 관련 설정
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+
+# OS 관련
+.DS_Store
+Thumbs.db
