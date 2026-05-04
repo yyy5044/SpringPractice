@@ -1,0 +1,5 @@
+193  [main] TRACE com.ssafy.live.LoggerTest -- trace level: 1 true
+194  [main] DEBUG com.ssafy.live.LoggerTest -- debug level: 1 true
+194  [main] INFO  com.ssafy.live.LoggerTest -- info level: 1 true
+194  [main] WARN  com.ssafy.live.LoggerTest -- warn level: 1 true
+194  [main] ERROR com.ssafy.live.LoggerTest -- error level: 1 true
