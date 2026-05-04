@@ -19,31 +19,16 @@ public class BookApp {
         logger.info("도서 등록: {}", book2);
 
         // TODO: checkPriceWarning 메서드를 호출하여 조건부 로깅을 테스트하세요.
-        checkPriceWarning(book1);
-        checkPriceWarning(book2);
+
         // TODO: 음수 가격으로 Book 생성을 시도하고 예외를 catch하여 로그로 출력하세요.
-        try {
-        	Book book = new Book();
-        	book.setPrice(-10000);
-        } catch(Exception e) {
-        	logger.warn(e.getMessage());
-        }
-        
+
         logger.info("=== 시스템 종료 ===");
     }
 
     private static void checkPriceWarning(Book book) {
         // TODO: 가격이 30000원 초과이면 WARN, 그 외에는 INFO 레벨로 로그를 출력하세요.
-    	if (book.getPrice() > 30000) {
-    		// WARN: "고가 도서 경고: {제목} ({가격}원)"
-    		logger.warn("고가 도서 경고: {} ({}원)", book.getTitle(), book.getPrice());
-    	} else {
-    		// INFO: "일반 도서: {제목} ({가격}원)"
-    		logger.info("도서 등록: {}", book);
-    	}
-    	
-        
-    	
+        // WARN: "고가 도서 경고: {제목} ({가격}원)"
+        // INFO: "일반 도서: {제목} ({가격}원)"
 
     }
 }
