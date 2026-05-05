@@ -62,9 +62,12 @@ class BookTest {
         String result = book.toString();
 
         // then
-        assertTrue(result.contains("Java 기초"));
-        assertTrue(result.contains("홍길동"));
-        assertTrue(result.contains("25000"));
+        assertAll("toString 출력 검증",
+	        		() -> assertTrue(result.contains("Java 기초")),
+	        		() -> assertTrue(result.contains("홍길동")),
+	        		() -> assertTrue(result.contains("25000"))
+        		);
+        
     }
 
     @Test
@@ -77,9 +80,10 @@ class BookTest {
         // TODO: assertThrows를 사용하여 book.setPrice(-1000) 호출 시
         // IllegalArgumentException이 발생하는지 검증하세요.
         // 힌트: assertThrows(예외클래스.class, () -> 실행코드)
-
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> book.setPrice(-1000));
+        
         // TODO: 예외 메시지에 "0 이상"이 포함되어 있는지 assertTrue로 검증하세요.
-
+        assertTrue(e.getMessage().contains("0 이상"));
     }
 
     @Test
@@ -92,6 +96,14 @@ class BookTest {
         // TODO: 가격이 30000원 초과이면 logLevel = "WARN", 그 외에는 "INFO"로 설정하세요.
         // 해당 조건에 맞는 로그도 출력하세요. (logger.warn 또는 logger.info)
         String logLevel = null;
+        int price = book.getPrice();
+        if (price > 30000) {
+        	logLevel = "WARN";
+        	logger.warn("고가 도서 경고");
+        } else {
+        	logLevel = "INFO";
+        	logger.info("도서 등록 완료: {}", book);
+        }
 
         // then
         assertEquals("WARN", logLevel);
