@@ -1,0 +1,30 @@
+package com.ssafy.hw.model.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.ssafy.hw.model.dto.Movie;
+
+/**
+ * 과제 8-2: MovieDao 인터페이스
+ *
+ * [미션] @Mapper 어노테이션을 추가하고 SELECT/INSERT 메서드를 선언하세요.
+ *
+ * 과제 요구사항:
+ * - @Mapper 어노테이션 사용
+ * - SELECT, INSERT 메서드 구현
+ */
+// TODO: @Mapper 어노테이션 추가
+@Mapper
+public interface MovieDao {
+
+    // ============ CREATE ============
+    // TODO: 영화 등록 메서드 선언 (int insert(Movie movie))
+	int insert(Movie movie);
+    // ============ READ ============
+    // TODO: 모든 영화 목록 조회 메서드 선언 (List<Movie> selectAll())
+	List<Movie> selectAll();
+    // TODO: ID로 영화 조회 메서드 선언 (Movie selectById(int id))
+	Movie selectById(int id);
+}

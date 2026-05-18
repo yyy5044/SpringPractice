@@ -1,0 +1,38 @@
+package com.ssafy.ws.model.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.ssafy.ws.model.dto.Book;
+
+/**
+ * 8-4: 삭제 - BookDao 인터페이스
+ *
+ * 실습 과제: DELETE 문을 이용한 삭제 기능 구현
+ * (SELECT + INSERT + UPDATE + DELETE = CRUD)
+ */
+@Mapper
+public interface BookDao {
+
+    // ============ READ ============
+    List<Book> selectAll();
+    Book select(String isbn);
+
+    // ============ CREATE ============
+    int insert(Book book);
+
+    // ============ UPDATE ============
+    int update(Book book);
+
+    // ============ DELETE (8-4 실습) ============
+    /**
+     * [TODO] 책 삭제 메서드를 선언하세요.
+     *
+     * 힌트:
+     * - 메서드명: delete
+     * - 파라미터: String isbn
+     * - 반환값: int (삭제된 행 수)
+     */
+    
+}

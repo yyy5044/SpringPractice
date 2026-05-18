@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    8-3: 수정 실습
+
+    학습 포인트:
+    1. UPDATE 문 작성법
+    2. SET 절: 수정할 컬럼 = #{값}
+    3. WHERE 절: 수정 대상 지정 (필수!)
+-->
+<mapper namespace="com.ssafy.ws.model.dao.BookDao">
+
+    <!-- READ -->
+    <select id="selectAll" resultType="Book">
+        SELECT isbn, title, author, price
+        FROM book
+    </select>
+
+    <select id="select" parameterType="String" resultType="Book">
+        SELECT isbn, title, author, price
+        FROM book
+        WHERE isbn = #{isbn}
+    </select>
+
+    <!-- CREATE -->
+    <insert id="insert" parameterType="Book">
+        INSERT INTO book (isbn, title, author, price)
+        VALUES (#{isbn}, #{title}, #{author}, #{price})
+    </insert>
+
+    <!-- UPDATE (8-3 실습) -->
+    <!-- TODO: UPDATE 쿼리를 작성하세요 -->
+    <update id="update">
+    	
+    </update>
+
+</mapper>

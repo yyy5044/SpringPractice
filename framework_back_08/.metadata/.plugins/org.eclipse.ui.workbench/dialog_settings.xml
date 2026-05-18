@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.m2e.core.wizards.Maven2ImportWizard"/>
+		<item key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID" value="org.eclipse.ui.wizards.export.ZipFile"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.m2e"/>
+		</list>
+		<list key="ImportExportPage.STORE_EXPANDED_EXPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
+		<section name="ImportExportWizard.dialogBounds">
+		</section>
+	</section>
+	<section name="WorkbenchPreferenceDialog.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="704"/>
+		<item key="DIALOG_Y_ORIGIN" value="63"/>
+		<item key="DIALOG_WIDTH" value="793"/>
+		<item key="DIALOG_HEIGHT" value="1107"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+	<section name="ZipFileExportWizard">
+		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
+		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
+		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\SSAFY\Downloads\5298. 영화 기본 조회 및 등록 Lv2.zip"/>
+			<item value="C:\Users\SSAFY\Downloads\5297. Mybatis 도서 설정 Lv5.zip"/>
+			<item value="C:\Users\SSAFY\Downloads\5296. Mybatis 도서 삭제 Lv4.zip"/>
+			<item value="C:\Users\SSAFY\Downloads\5295. Mybatis 도서 수정 Lv3.zip"/>
+			<item value="C:\Users\SSAFY\Downloads\5294. Mybatis 도서 등록 Lv2.zip"/>
+			<item value="C:\Users\SSAFY\Downloads\5293. Mybatis 도서 목록 조회 Lv1.zip"/>
+		</list>
+		<section name="ZipFileExportWizard.dialogBounds">
+			<item key="DIALOG_X_ORIGIN" value="385"/>
+			<item key="DIALOG_Y_ORIGIN" value="362"/>
+			<item key="DIALOG_WIDTH" value="623"/>
+			<item key="DIALOG_HEIGHT" value="622"/>
+			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		</section>
+	</section>
+</section>

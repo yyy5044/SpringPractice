@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    과제 8-2: SELECT + INSERT 구현
+
+    [미션] namespace와 SELECT/INSERT 쿼리를 작성하세요.
+
+    과제 요구사항:
+    1. namespace는 Dao 인터페이스의 전체 경로와 일치
+    2. SELECT, INSERT 구현
+    3. parameterType과 resultType 적절히 사용
+-->
+<mapper namespace="com.ssafy.hw.model.dao.MovieDao">
+
+    <!-- ============ CREATE ============ -->
+    <!--
+        [미션] INSERT 문을 작성하세요.
+        - id="insert", parameterType="Movie"
+        - useGeneratedKeys="true", keyProperty="id" 사용
+    -->
+    <insert id="insert" parameterType="Movie" keyProperty="id" useGeneratedKeys="true">
+        <!-- TODO: INSERT SQL 작성 -->
+		INSERT INTO movie (title, director, genre, running_time)
+        VALUES (#{title}, #{director}, #{genre}, #{runningTime})
+    </insert>
+
+    <!-- ============ READ ============ -->
+    <!--
+        [미션] 전체 목록 조회 SELECT 문을 작성하세요.
+        - id="selectAll", resultType="Movie"
+    -->
+    <select id="selectAll" resultType="Movie">
+        <!-- TODO: SELECT SQL 작성 -->
+		SELECT id, title, director, genre, running_time AS runningTime 
+		FROM movie
+    </select>
+
+    <!--
+        [미션] 단건 조회 SELECT 문을 작성하세요.
+        - id="selectById", parameterType="int", resultType="Movie"
+        - 힌트: running_time은 runningTime으로 별칭(AS) 사용
+    -->
+    <select id="selectById" parameterType="int" resultType="Movie">
+        <!-- TODO: SELECT SQL 작성 -->
+		SELECT id, title, director, genre, running_time AS runningTime
+		FROM movie
+    </select>
+	
+</mapper>

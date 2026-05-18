@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    8-4: 삭제 실습
+
+    학습 포인트:
+    1. DELETE 문 작성법
+    2. WHERE 절: 삭제 대상 지정 (필수!)
+    3. CRUD 완성
+-->
+<mapper namespace="com.ssafy.ws.model.dao.BookDao">
+
+    <!-- READ -->
+    <select id="selectAll" resultType="Book">
+        SELECT isbn, title, author, price
+        FROM book
+    </select>
+
+    <select id="select" parameterType="String" resultType="Book">
+        SELECT isbn, title, author, price
+        FROM book
+        WHERE isbn = #{isbn}
+    </select>
+
+    <!-- CREATE -->
+    <insert id="insert" parameterType="Book">
+        INSERT INTO book (isbn, title, author, price)
+        VALUES (#{isbn}, #{title}, #{author}, #{price})
+    </insert>
+
+    <!-- UPDATE -->
+    <update id="update" parameterType="Book">
+        UPDATE book
+        SET title = #{title},
+            author = #{author},
+            price = #{price}
+        WHERE isbn = #{isbn}
+    </update>
+
+    <!-- DELETE (8-4 실습) -->
+    <!-- TODO: DELETE 쿼리를 작성하세요 -->
+	<delete id="delete" parameterType="string">
+    DELETE FROM book
+    WHERE isbn = #{isbn}
+</delete>
+</mapper>

@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>영화 상세</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #333; }
+        .detail { background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #ddd; margin-top: 20px; }
+        .detail p { margin: 10px 0; }
+        .label { font-weight: bold; color: #555; }
+        a { color: #3c90e2; text-decoration: none; margin-right: 10px; }
+        a:hover { text-decoration: underline; }
+        .actions { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>영화 상세</h1>
+
+    <div class="detail">
+        <%-- TODO: movie 객체의 id, title, director, genre, runningTime을 EL로 출력하세요 --%>
+        <%-- 힌트: ${movie.id}, ${movie.title}, ${movie.director}, ${movie.genre}, ${movie.runningTime} --%>
+		<table>
+			<thead>
+	            <tr>
+	                <th>ID</th>
+	                <th>제목</th>
+	                <th>감독</th>
+	                <th>장르</th>
+	                <th>상영시간</th>
+	            </tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>${movie.id}</td>
+					<td>${movie.title}</td>
+					<td>${movie.director}</td>
+					<td>${movie.genre}</td>
+					<td>${movie.runningTime}</td>
+				</tr>
+			</tbody>
+		</table>
+    </div>
+
+    <div class="actions">
+        <a href="/movie/list">목록으로</a>
+    </div>
+</body>
+</html>

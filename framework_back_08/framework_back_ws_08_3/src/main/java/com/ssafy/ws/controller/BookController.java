@@ -1,0 +1,70 @@
+package com.ssafy.ws.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ssafy.ws.model.dto.Book;
+import com.ssafy.ws.service.BookService;
+
+@Controller
+@RequestMapping("/book")
+public class BookController {
+
+    private final BookService bookService;
+
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
+
+    @GetMapping("/list")
+    public String list(Model model) {
+        List<Book> books = bookService.selectAll();
+        model.addAttribute("books", books);
+        return "book/list";
+    }
+
+    @GetMapping("/regist")
+    public String showRegistForm() {
+        return "book/regist";
+    }
+
+    @PostMapping("/regist")
+    public String regist(Book book) {
+        bookService.insert(book);
+        return "redirect:/book/list";
+    }
+
+    @GetMapping("/detail")
+    public String detail(@RequestParam("isbn") String isbn, Model model) {
+        Book book = bookService.select(isbn);
+        model.addAttribute("book", book);
+        return "book/detail";
+    }
+
+    // TODO: 수정 폼을 보여주는 핸들러 메서드를 작성하세요 (GET /edit)
+    // - isbn을 파라미터로 받아 해당 도서를 조회한 뒤 수정 폼으로 전달합니다
+    @GetMapping("/edit")
+    public String edit(@RequestParam String isbn, Model model) {
+    	Book book = bookService.select(isbn);
+    	model.addAttribute(book);
+    	
+    	return "book/edit";
+    }
+
+    // TODO: 수정 처리를 하는 핸들러 메서드를 작성하세요 (POST /update)
+    // - Book 객체를 받아 수정 후 상세 페이지로 리다이렉트합니다
+    @PostMapping("/update")
+    public String update(@ModelAttribute Book book) {
+    	bookService.update(book);
+    	
+    	return "redirect:/book/detail?isbn="+book.getIsbn();
+    }
+    
+}
